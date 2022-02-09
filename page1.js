@@ -29,7 +29,7 @@ console.log("Person = ".concat(person, ", data type = ").concat(typeof person));
 //Dynamic type casting
 var num = 'AbraKaDabra';
 console.log("num = ".concat(num, ", data type = ").concat(typeof num));
-// //Checking Equality
+//Checking Equality
 // console.log("50"==50)
 // console.log('50'===50)
 //function
@@ -40,3 +40,31 @@ greet(); //function call
 //Array
 var numbers = [10, 20, 'a', 15];
 console.log("numbers = ".concat(numbers, ", data type = ").concat(typeof numbers));
+// implicit object
+var ppl = {
+    name: 'ppl1',
+    age: 30
+};
+console.log(ppl);
+//explicit
+var ppl2 = { name: 'person2',
+    address: 'mumbai' };
+console.log(ppl2);
+//explicit version2
+var per3 = {
+    name: 'person3',
+    'address': 'delhi'
+};
+console.log(per3);
+//enum
+var color;
+(function (color) {
+    color[color["RED"] = 0] = "RED";
+    color[color["GREEN"] = 1] = "GREEN";
+    color[color["BLUE"] = 2] = "BLUE";
+})(color || (color = {}));
+var red = color.RED;
+console.log("color=".concat(color, ",type=").concat(typeof color));
+var myVar1 = 'test';
+var myVar2 = 12;
+console.log(myVar1 + myVar2);
