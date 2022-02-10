@@ -55,6 +55,11 @@ add4(10, 20, 30, 40, 50);
 //usually added as the last parameter to the function
 function abc(p1, p2) {
     console.log("p1=".concat(p1));
-    console.log("p2=".concat(p2));
+    console.log("p2=".concat(p2)); //takes as undefined if not passed 
 }
 abc(10);
+//explicit parameters
+function abcd(p1, p2) {
+    console.log("".concat(p1, "+").concat(p2, "=").concat(p1 + p2));
+}
+abcd(10, 20); //cannot pass strings anymore

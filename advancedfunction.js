@@ -5,4 +5,4 @@ function multiply(p1, p2) {
     return p1 * p2;
 }
 var mul = multiply(10, 4);
-console.log("typepf".concat(mul));
+console.log(mul);
