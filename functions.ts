@@ -83,10 +83,3 @@ function abcd(p1:number,p2:number){
 }
 abcd(10,20) //cannot pass strings anymore
 
-
-
-
-
-
-
-
