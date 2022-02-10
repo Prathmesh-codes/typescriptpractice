@@ -93,3 +93,47 @@ class getset{
 }
 const g1=new getset('Get set 1')
 console.log(`name=${g1.getName}`)
+
+//association has-a relationship
+class employee{
+    name:string
+    id:number
+    constructor(name:string,id:number){
+        this.name=name
+        this.id=id
+    }
+    printinfo()
+    {
+        console.log(`name=${this.name}`)
+        console.log(`id=${this.id}`)
+    }
+}
+
+class company{
+    private employees: employee[] //company has employees
+    private name:string 
+constructor(name:string){
+    this.employees=[]
+    this.name=name
+}
+
+addemp(id:number,name:string){
+    this.employees.push(new employee(name,id))
+}
+
+printemp()
+{
+    console.log(`${this.name} Has following employees`)
+    for (const em of this.employees){
+        console.log(em)
+    }
+}
+}
+
+
+const c1:company=new company('C1')
+
+c1.addemp(1,'emp1')
+c1.addemp(2,'emp2')
+
+c1.printemp()

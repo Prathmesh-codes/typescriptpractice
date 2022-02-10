@@ -75,4 +75,50 @@ var k = /** @class */ (function () {
     k.kval = 15;
     return k;
 }());
-console.log("value:".concat(k.kval));
+console.log("value:".concat(k.kval)); //Accesed using class name
+//Getter and setter
+var getset = /** @class */ (function () {
+    function getset(name) {
+        this.name = name;
+    }
+    getset.prototype.setName = function (name) {
+        this.name = name;
+    };
+    getset.prototype.getName = function () { return this.name; };
+    return getset;
+}());
+var g1 = new getset('Get set 1');
+console.log("name=".concat(g1.getName));
+//association has-a relationship
+var employee = /** @class */ (function () {
+    function employee(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    employee.prototype.printinfo = function () {
+        console.log("name=".concat(this.name));
+        console.log("id=".concat(this.id));
+    };
+    return employee;
+}());
+var company = /** @class */ (function () {
+    function company(name) {
+        this.employees = [];
+        this.name = name;
+    }
+    company.prototype.addemp = function (id, name) {
+        this.employees.push(new employee(name, id));
+    };
+    company.prototype.printemp = function () {
+        console.log("".concat(this.name, " Has following employees"));
+        for (var _i = 0, _a = this.employees; _i < _a.length; _i++) {
+            var em = _a[_i];
+            console.log(em);
+        }
+    };
+    return company;
+}());
+var c1 = new company('C1');
+c1.addemp(1, 'emp1');
+c1.addemp(2, 'emp2');
+c1.printemp();
